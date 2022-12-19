@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Food>
+
+@{
+    ViewData["Title"] = "List of Foods";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-8 col-xs-8 offset-2 border-primary mb-3">
+            <div class="card mb-3" style="max-width: 1280px;">
+                <div class="row g-0">
+
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-dark">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @item.FoodName
+
+                                    @if( User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                    {
+                                        <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+                                    }
+                                    
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <img src="@item.FoodPicture" width="100%" alt="@item.FoodName">
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <p class="card-text">@item.Description</p>
+                            <p class="card-text"><b>Category: </b>@item.FoodCategory</p>
+                            <p class="card-text"><b>Tag: </b>@item.Tag.TagName</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card-footer ">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right" asp-controller="Foods" asp-action="Details" asp-route-id="@item.Id">
+                                    <i class="bi bi-eye-fill"></i>Show Details
+                                    </a>
+                                <a class="btn btn-outline-danger" asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@item.Id"><i class="bi bi-cart-plus"></i>Order Now(Price @item.Price.ToString("c"))</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@await Html.PartialAsync("_CreateItem","Foods")
+@*@await Html.PartialAsync("Partial View Name","View Model/Controller Name")*@

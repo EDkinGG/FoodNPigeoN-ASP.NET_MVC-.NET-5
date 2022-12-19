@@ -1,0 +1,48 @@
+﻿@*Define Model*@
+
+@model IEnumerable<AppUser>
+@{
+    ViewData["Title"] = "List of all Users";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <p>
+            <h4>
+                <center>List Of All Users</center>
+            </h4>
+        </p>
+        <table class="table bg-light">
+            <thead>
+                 <tr class="text-center">
+                    <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                    <th>@Html.DisplayNameFor(model => model.UserName)</th>
+                    <th>@Html.DisplayNameFor(model => model.Email)</th>
+                    <th>@Html.DisplayNameFor(model => model.Address)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model )
+               {
+                <tr>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                </tr>
+                   
+               }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

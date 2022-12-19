@@ -1,0 +1,78 @@
+﻿@using FoodPigeoN.Data.ViewModels;
+@model SignUpVM;
+
+@{
+    ViewData["Title"] = "Sign Up ";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p>
+            <h4><center>Create a New Account</center></h4>
+            <hr/>
+        </p>
+
+        @if(TempData["Error"] != null)
+            {
+                <div class="col-md-12 alert alert-danger">
+                    <span><b>+_+</b>  @TempData["Error"] </span>
+                </div>
+            }
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="SignUp">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                      <div class="form-group">
+                        <label asp-for="FullName" class="control-label"></label>
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="EmailAddress" class="control-label"></label>
+                        <input asp-for="EmailAddress" class="form-control" />
+                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Address" class="control-label"></label>
+                        <input asp-for="Address" class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+
+                     <div class="form-group">
+                        <label asp-for="PhoneNumber" class="control-label"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+
+                      <div class="form-group">
+                        <label asp-for="UserName" class="control-label"></label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                      <div class="form-group">
+                        <label asp-for="ConfirmPassword" class="control-label"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-outline-success btn-lg btn-block" type="submit" value="Sign Up" />
+                        <hr/>
+                        <a class="btn btn-outline-secondary btn-lg btn-block" asp-controller="Foods" asp-action="Index">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

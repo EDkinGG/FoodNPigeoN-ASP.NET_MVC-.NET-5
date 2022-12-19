@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FoodPigeoN</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            background-image: url('../css/images/MyVersion.jpg');
+            background-color: #FFF1B4;
+         }
+    </style>
+
+</head>
+
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid" >
+                
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/css/images/final22.svg" width="30" />
+                    FoodPigeoN
+                    </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="navbar-nav flex-grow-1"> 
+                            <a class="nav-link text-white" asp-controller="Foods" asp-action="Index">
+                                <img src="~/css/images/burger_final1.svg" width="30"/>
+                                Foods
+                                </a>
+                        </li>
+
+                        @if( User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="bi bi-gear"></i> Control Panel
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" asp-controller="Cities" asp-action="Index">Cities</a>
+                                        <a class="dropdown-item" asp-controller="Types" asp-action="Index">Types</a>
+                                        <a class="dropdown-item" asp-controller="Tags" asp-action="Index"> Tags</a>
+                                    </div>
+                                </li>
+                        }
+                 
+
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0" asp-controller="Foods" asp-action="Filter" style="padding-right: 25px;">
+                        <input name="searchString" type="text" class="form-control" placeholder="Search for a Food..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+
+                    <ul class="navbar-nav text-white">
+                        @await Component.InvokeAsync("ShoppingCartSummary")
+                    </ul>
+
+                    <partial name="_Identity.cshtml"/>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="background-color: #000000;">
+        <div class="container">
+            &copy; 2022 - FoodPigeoN - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
