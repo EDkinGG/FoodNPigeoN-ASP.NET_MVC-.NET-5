@@ -20,7 +20,7 @@ This was my CSE3100 Web Lab Project.
 
 <h2>Browse Food</h2>
 <p align = center>
-<img src = "image/BrowseFood.PNG" alt = "" title = "" width = "600">
+<img src = "image/Browse Food.PNG" alt = "" title = "" width = "600">
 </p>
 
 
@@ -36,7 +36,7 @@ This was my CSE3100 Web Lab Project.
 
 <h2>PayPal Payment</h2>
 <p align = center>
-<img src = "image/PayPalPayment.PNG" alt = "" title = "" width = "600">
+<img src = "image/PaypalPayment.PNG" alt = "" title = "" width = "600">
 </p>
 
 
@@ -84,6 +84,6 @@ This was my CSE3100 Web Lab Project.
 
 <h2>List of All Orders(Admin)</h2>
 <p align = center>
-<img src = "image/AllOderList.PNG" alt = "" title = "" width = "600">
+<img src = "image/AllOrderList.PNG" alt = "" title = "" width = "600">
 </p>
 
