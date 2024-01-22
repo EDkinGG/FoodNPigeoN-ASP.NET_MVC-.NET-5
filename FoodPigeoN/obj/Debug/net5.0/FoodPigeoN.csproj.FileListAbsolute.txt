@@ -104,3 +104,9 @@ C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\Razor\Vie
 C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\Razor\Views\Account\SignUpDone.cshtml.g.cs
 C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\Razor\Views\Shared\_Identity.cshtml.g.cs
 C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\Razor\Views\Account\Users.cshtml.g.cs
+C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\FoodPigeoN.sourcelink.json
+C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\staticwebassets\FoodPigeoN.StaticWebAssets.Pack.cache
+C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\staticwebassets\msbuild.FoodPigeoN.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\staticwebassets\msbuild.build.FoodPigeoN.props
+C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.FoodPigeoN.props
+C:\Users\r23gh\source\repos\Exx\FoodPigeoN\FoodPigeoN\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.FoodPigeoN.props
